@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NS400 - Mi Meta</title>
+    <link rel="stylesheet" href="detail-styles.css">
+</head>
+<body class="blue-theme">
+    <div class="theme-switcher">
+        <button class="theme-btn blue-theme active">Azul</button>
+        <button class="theme-btn red-theme">Rojo</button>
+        <button class="theme-btn green-theme">Verde</button>
+    </div>
+
+    <header>
+        <h1>NS400</h1>
+        <a href="index.html" class="back-btn">← Volver</a>
+    </header>
+    
+    <div class="content-container">
+        <div class="intro-video-section">
+            <div class="video-wrapper">
+                <video id="detail-video" controls autoplay>
+                    <source src="videos/pulsarns400.mp4" type="video/mp4">
+                    Tu navegador no soporta el elemento de video.
+                </video>
+            </div>
+            
+            <div class="video-description">
+                <h2>Un sueño de potencia y estilo</h2>
+                <p>La NS400 representa velocidad, libertad y un diseño excepcional. Una máquina creada para quienes buscan sensaciones intensas en dos ruedas.</p>
+            </div>
+        </div>
+        
+        <div class="model-viewer-section">
+            <h2>Explora cada detalle</h2>
+            <div class="model-container">
+                <div class="model-viewer">
+                    <img id="product-img" src="img/ns400.webp" alt="NS400">
+                </div>
+                <div class="controls">
+                    <button id="rotate-left">◀</button>
+                    <button id="rotate-right">▶</button>
+                    <input type="range" id="rotation-slider" min="0" max="360" value="0">
+                </div>
+            </div>
+        </div>
+        
+        <div class="specs-section">
+            <h2>Especificaciones Técnicas</h2>
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="motor">Motor</button>
+                <button class="tab-btn" data-tab="rendimiento">Rendimiento</button>
+                <button class="tab-btn" data-tab="dimensiones">Dimensiones</button>
+                <button class="tab-btn" data-tab="equipamiento">Equipamiento</button>
+            </div>
+            
+            <div class="tab-content">
+                <div class="tab-pane active" id="motor">
+                    <ul class="specs-list">
+                        <li><span>Tipo:</span> 4 tiempos, DOHC, 4 válvulas por cilindro</li>
+                        <li><span>Cilindrada:</span> 399 cc</li>
+                        <li><span>Diámetro x carrera:</span> 70 mm x 51.8 mm</li>
+                        <li><span>Relación de compresión:</span> 11.5:1</li>
+                        <li><span>Potencia máxima:</span> 45 CV a 10,000 rpm</li>
+                        <li><span>Par máximo:</span> 38 Nm a 8,000 rpm</li>
+                        <li><span>Alimentación:</span> Inyección electrónica</li>
+                        <li><span>Refrigeración:</span> Líquida</li>
+                    </ul>
+                </div>
+                
+                <div class="tab-pane" id="rendimiento">
+                    <ul class="specs-list">
+                        <li><span>Velocidad máxima:</span> 180 km/h</li>
+                        <li><span>Aceleración 0-100 km/h:</span> 4.8 segundos</li>
+                        <li><span>Consumo medio:</span> 4.2 L/100km</li>
+                        <li><span>Capacidad del depósito:</span> 14 litros</li>
+                        <li><span>Autonomía:</span> Aproximadamente 330 km</li>
+                        <li><span>Emisiones CO2:</span> 98 g/km</li>
+                    </ul>
+                </div>
+                
+                <div class="tab-pane" id="dimensiones">
+                    <ul class="specs-list">
+                        <li><span>Longitud total:</span> 2,090 mm</li>
+                        <li><span>Anchura total:</span> 730 mm</li>
+                        <li><span>Altura total:</span> 1,140 mm</li>
+                        <li><span>Distancia entre ejes:</span> 1,370 mm</li>
+                        <li><span>Altura del asiento:</span> 815 mm</li>
+                        <li><span>Peso en orden de marcha:</span> 168 kg</li>
+                        <li><span>Capacidad de carga:</span> 180 kg</li>
+                    </ul>
+                </div>
+                
+                <div class="tab-pane" id="equipamiento">
+                    <ul class="specs-list">
+                        <li><span>Suspensión delantera:</span> Horquilla invertida de 41 mm</li>
+                        <li><span>Suspensión trasera:</span> Monoamortiguador ajustable</li>
+                        <li><span>Freno delantero:</span> Disco doble de 310 mm, pinzas radiales</li>
+                        <li><span>Freno trasero:</span> Disco simple de 220 mm</li>
+                        <li><span>ABS:</span> De serie, desconectable</li>
+                        <li><span>Instrumentación:</span> Panel digital LCD completo</li>
+                        <li><span>Iluminación:</span> Full LED</li>
+                        <li><span>Conectividad:</span> Bluetooth para smartphone</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="progress-section">
+            <h2>Mi progreso hacia esta meta</h2>
+            <div class="progress-container">
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 65%;">65%</div>
+                </div>
+                <div class="progress-details">
+                    <p>Ahorro actual: $5,850</p>
+                    <p>Objetivo: $9,000</p>
+                    <p>Tiempo estimado: 7 meses</p>
+                </div>
+            </div>
+            <div class="milestone-container">
+                <div class="milestone achieved">
+                    <div class="milestone-dot"></div>
+                    <div class="milestone-content">
+                        <h4>Investigación completada</h4>
+                        <p>Comparativas, pruebas y revisiones analizadas</p>
+                    </div>
+                </div>
+                <div class="milestone achieved">
+                    <div class="milestone-dot"></div>
+                    <div class="milestone-content">
+                        <h4>50% del ahorro</h4>
+                        <p>$4,500 ahorrados</p>
+                    </div>
+                </div>
+                <div class="milestone current">
+                    <div class="milestone-dot"></div>
+                    <div class="milestone-content">
+                        <h4>65% del ahorro</h4>
+                        <p>$5,850 ahorrados</p>
+                    </div>
+                </div>
+                <div class="milestone">
+                    <div class="milestone-dot"></div>
+                    <div class="milestone-content">
+                        <h4>Prueba de manejo</h4>
+                        <p>Programada para el próximo mes</p>
+                    </div>
+                </div>
+                <div class="milestone">
+                    <div class="milestone-dot"></div>
+                    <div class="milestone-content">
+                        <h4>Compra</h4>
+                        <p>Objetivo final</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2025 - Mi Asistente Personal de Sueños y Metas</p>
+    </footer>
+
+    <script src="detail-script.js"></script>
+</body>
+</html>

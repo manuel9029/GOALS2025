@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Asistente Personal - Mis Sueños y Metas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="theme-switcher">
+        <button class="theme-btn blue-theme active">Azul</button>
+        <button class="theme-btn red-theme">Rojo</button>
+        <button class="theme-btn green-theme">Verde</button>
+    </div>
+
+    <header>
+        <h1>Mi Asistente Personal</h1>
+        <h2>Mis Sueños y Metas</h2>
+    </header>
+
+    <div class="intro-container">
+        <div id="intro-video-container">
+            <video id="intro-video" width="100%" controls autoplay muted>
+                <source src="videos/intro.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de video.
+            </video>
+        </div>
+        
+        <div class="intro-text">
+            <h3>Bienvenido a tu tablero de sueños y metas</h3>
+            <p>Este es un espacio para visualizar y conectar con tus aspiraciones.</p>
+            <button id="skip-intro">Saltar Introducción</button>
+        </div>
+    </div>
+
+    <div class="dreams-container hidden">
+        <div class="cards-container">
+            <div class="card" data-page="ns400.html">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="img/ns400.webp" alt="NS400">
+                        <h3>NS400</h3>
+                    </div>
+                    <div class="card-back">
+                        <h3>NS400</h3>
+                        <p>Potencia y estilo en dos ruedas</p>
+                        <button class="view-details-btn">Ver Detalles</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card" data-page="n250.html">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="img/N250.webp" alt="N250">
+                        <h3>N250</h3>
+                    </div>
+                    <div class="card-back">
+                        <h3>N250</h3>
+                        <p>Rendimiento y libertad en cada viaje</p>
+                        <button class="view-details-btn">Ver Detalles</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card" data-page="camaro.html">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="img/camaro.webp" alt="Camaro RS">
+                        <h3>Camaro RS</h3>
+                    </div>
+                    <div class="card-back">
+                        <h3>Camaro RS</h3>
+                        <p>Poder americano y diseño legendario</p>
+                        <button class="view-details-btn">Ver Detalles</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card" data-page="silverado.html">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="img/silverado.jpg" alt="Silverado">
+                        <h3>Silverado</h3>
+                    </div>
+                    <div class="card-back">
+                        <h3>Silverado</h3>
+                        <p>Fuerza y capacidad sin límites</p>
+                        <button class="view-details-btn">Ver Detalles</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card" data-page="rocketmann.html">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="img/rocketmann.webp" alt="Rocketmann 300">
+                        <h3>Rocketmann 300</h3>
+                    </div>
+                    <div class="card-back">
+                        <h3>Rocketmann 300</h3>
+                        <p>Velocidad y adrenalina</p>
+                        <button class="view-details-btn">Ver Detalles</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card" data-page="trading.html">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="img/trading.png" alt="Trading">
+                        <h3>Trading</h3>
+                    </div>
+                    <div class="card-back">
+                        <h3>Trading</h3>
+                        <p>Libertad financiera y crecimiento digital</p>
+                        <button class="view-details-btn">Ver Detalles</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 - Mi Asistente Personal de Sueños y Metas</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

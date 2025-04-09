@@ -1,0 +1,416 @@
+/* Estilos generales */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+:root {
+    --primary-color: #0a2540;
+    --secondary-color: #4587ff;
+    --text-color: #ffffff;
+    --accent-color: #00b4d8;
+    --card-bg: rgba(13, 41, 71, 0.7);
+    --gradient-bg: linear-gradient(135deg, #0a2540 0%, #1a4980 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--gradient-bg);
+    color: var(--text-color);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/api/placeholder/1920/1080');
+    background-size: cover;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+/* Cambios de tema */
+body.red-theme {
+    --primary-color: #400a0a;
+    --secondary-color: #ff4545;
+    --accent-color: #d80000;
+    --card-bg: rgba(71, 13, 13, 0.7);
+    --gradient-bg: linear-gradient(135deg, #400a0a 0%, #801a1a 100%);
+}
+
+body.green-theme {
+    --primary-color: #0a4020;
+    --secondary-color: #45ff87;
+    --accent-color: #00d840;
+    --card-bg: rgba(13, 71, 40, 0.7);
+    --gradient-bg: linear-gradient(135deg, #0a4020 0%, #1a8045 100%);
+}
+
+.theme-switcher {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 100;
+}
+
+.theme-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.theme-btn.active {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.blue-theme {
+    background: #0a2540;
+    color: white;
+}
+
+.red-theme {
+    background: #400a0a;
+    color: white;
+}
+
+.green-theme {
+    background: #0a4020;
+    color: white;
+}
+
+/* Encabezado */
+header {
+    text-align: center;
+    padding: 40px 0;
+    position: relative;
+    z-index: 1;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(0, 180, 216, 0.7);
+}
+
+header h2 {
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--secondary-color);
+}
+
+/* Video de introducción */
+.intro-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    position: relative;
+    z-index: 2;
+    transition: opacity 1s ease;
+}
+
+#intro-video-container {
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+#intro-video {
+    width: 100%;
+    height: 100%;
+}
+
+.intro-text {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.intro-text h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+}
+
+.intro-text p {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+#skip-intro {
+    padding: 12px 25px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#skip-intro:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenedor de sueños y metas */
+.dreams-container {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    transition: opacity 1s ease;
+}
+
+.dreams-container.hidden {
+    display: none;
+    opacity: 0;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Tarjetas */
+.card {
+    height: 300px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: var(--card-bg);
+    backdrop-filter: blur(5px);
+}
+
+.card-front {
+    overflow: hidden;
+}
+
+.card-front img {
+    width: 80%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.card:hover .card-front img {
+    transform: scale(1.1);
+}
+
+.card-front h3 {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    background: var(--card-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.card-back h3 {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.card-back p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.view-details-btn {
+    padding: 10px 20px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.view-details-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease forwards;
+}
+
+.slide-up {
+    animation: slideUp 0.8s ease forwards;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+    
+    header h2 {
+        font-size: 1.4rem;
+    }
+    
+    #intro-video-container {
+        height: 300px;
+    }
+    
+    .cards-container {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+:root {
+    --primary-color: #0a0f4a;
+    --secondary-color: #36f3ff;
+    --text-color: #ffffff;
+    --accent-color: #00ffcc;
+    --card-bg: rgba(20, 20, 60, 0.8);
+    --gradient-bg: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+}
+
+body.red-theme {
+    --primary-color: #3f0a24;
+    --secondary-color: #ff4d6d;
+    --accent-color: #ff0077;
+    --card-bg: rgba(60, 10, 30, 0.8);
+    --gradient-bg: linear-gradient(135deg, #3f0a24 0%, #801a50 100%);
+}
+
+body.green-theme {
+    --primary-color: #003c1c;
+    --secondary-color: #00ff9c;
+    --accent-color: #00ffa1;
+    --card-bg: rgba(0, 60, 28, 0.8);
+    --gradient-bg: linear-gradient(135deg, #003c1c 0%, #00b56f 100%);
+}
+
+header h1 {
+    text-shadow: 0 0 15px #36f3ff, 0 0 30px #00ffcc;
+}
+
+.intro-text h3,
+header h2 {
+    color: var(--secondary-color);
+    text-shadow: 0 0 10px var(--accent-color);
+}
+
+.theme-btn {
+    background-color: var(--accent-color);
+    color: #000;
+    box-shadow: 0 0 12px var(--accent-color);
+}
+
+.theme-btn.active {
+    box-shadow: 0 0 20px var(--accent-color), 0 0 30px var(--secondary-color);
+}
+
+#skip-intro,
+.view-details-btn {
+    background: var(--accent-color);
+    color: #000;
+    box-shadow: 0 0 10px var(--accent-color);
+}
+
+#skip-intro:hover,
+.view-details-btn:hover {
+    box-shadow: 0 0 20px var(--accent-color), 0 0 30px var(--secondary-color);
+}
+
+.card-front h3,
+.card-back h3 {
+    color: var(--secondary-color);
+    text-shadow: 0 0 10px var(--secondary-color);
+}
+
+.card-back p {
+    color: #e0f7ff;
+}
+
+footer {
+    color: rgba(255, 255, 255, 0.5);
+    text-shadow: 0 0 5px #36f3ff;
+}
+
+/* Agrega un efecto de glow al contenedor de video */
+#intro-video-container {
+    box-shadow: 0 0 25px var(--accent-color);
+}
+
+/* Agrega un leve resplandor a las tarjetas */
+.card-inner {
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.2);
+}
+
+.card:hover .card-inner {
+    box-shadow: 0 0 30px var(--accent-color), 0 0 60px var(--secondary-color);
+}
